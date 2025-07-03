@@ -1,9 +1,20 @@
-import { ReactNode } from 'react'
+import type { Metadata } from 'next'
+import './globals.css'
 
-type Props = {
-  children: ReactNode
+export const metadata: Metadata = {
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.dev',
 }
 
-export default function RootLayout({ children }: Props) {
-  return children
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }
